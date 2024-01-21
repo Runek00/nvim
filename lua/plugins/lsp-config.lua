@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = {"lua_ls", "tsserver", "html", "htmx"}
+				ensure_installed = {"lua_ls", "tsserver", "html", "htmx", "pylsp"}
 			})
 		end
 	},
@@ -23,7 +23,7 @@ return {
 			lspconfig.htmx.setup({})
 			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 			vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-			vim.keymap.set({'n', 'v', 'i'}, '<C- >', vim.lsp.buf.code_action, {})
+			vim.keymap.set({'n', 'v', 'i'}, '<leader>a', vim.lsp.buf.code_action, {})
 		end
-	}
+	},
 }

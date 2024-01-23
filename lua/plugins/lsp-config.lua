@@ -36,7 +36,11 @@ return {
 			})
 			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 			vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-			vim.keymap.set('n', 'gr', vim.lsp.buf.references, {})
+			vim.keymap.set('n', 'gr',
+				function ()
+					require("telescope.builtin").lsp_references()
+				end,
+				{noremap =  true, silent =  true})
 			vim.keymap.set({'n', 'v', 'i'}, '<leader>a', vim.lsp.buf.code_action, {})
 		end
 	},

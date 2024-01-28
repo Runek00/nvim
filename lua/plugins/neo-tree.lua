@@ -7,7 +7,7 @@ return {
 		"MunifTanjim/nui.nvim",
 	},
 	config = function()
-		vim.keymap.set('n', '<leader>tt', ':Neotree filesystem toggle right reveal<CR>')
+		vim.keymap.set("n", "<leader>tt", ":Neotree filesystem toggle right reveal<CR>")
 		local ntree = require("neo-tree")
 		ntree.setup({
 			close_if_last_window = true,
@@ -16,14 +16,17 @@ return {
 					event = "file_opened",
 					handler = function()
 						require("neo-tree.command").execute({ action = "close" })
-					end
+					end,
 				},
-        		},
+			},
 			window = {
 				mappings = {
-					["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true }},
-				}
-			}
+					["P"] = { 
+						"toggle_preview",
+						config = { use_float = true, use_image_nvim = true }
+					},
+				},
+			},
 		})
-	end
+	end,
 }

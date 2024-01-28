@@ -10,9 +10,9 @@ return {
 				null_ls.builtins.formatting.mdformat,
 				null_ls.builtins.formatting.goimports,
 				--null_ls.builtins.formatting.google-java-format,
-			}
+			},
 		})
 
-		vim.keymap.set("n", '<leader>gf', vim.lsp.buf.format, {})
-	end
+		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+	end,
 }

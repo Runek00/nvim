@@ -3,48 +3,46 @@ return {
 		"williamboman/mason.nvim",
 		config = function()
 			require("mason").setup()
-		end
+		end,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = {"lua_ls", "tsserver", "html", "htmx", "pylsp", "gopls"}
+				ensure_installed = { "lua_ls", "tsserver", "html", "htmx", "pylsp", "gopls" },
 			})
-		end
+		end,
 	},
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			local capabilities = require('cmp_nvim_lsp').default_capabilities()
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
 			lspconfig.tsserver.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
 			lspconfig.html.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
 			lspconfig.htmx.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
 			lspconfig.pylsp.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
 			lspconfig.gopls.setup({
-				capabilities = capabilities
+				capabilities = capabilities,
 			})
-			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-			vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-			vim.keymap.set('n', 'gr',
-				function ()
-					require("telescope.builtin").lsp_references()
-				end,
-				{noremap =  true, silent =  true})
-			vim.keymap.set({'n', 'v'}, '<leader>a', vim.lsp.buf.code_action, {})
-		end
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+			vim.keymap.set("n", "gr", function()
+				require("telescope.builtin").lsp_references()
+			end, { noremap = true, silent = true })
+			vim.keymap.set({ "n", "v" }, "<leader>a", vim.lsp.buf.code_action, {})
+		end,
 	},
 }

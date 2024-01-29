@@ -43,6 +43,7 @@ return {
 				require("telescope.builtin").lsp_references()
 			end, { noremap = true, silent = true })
 			vim.keymap.set({ "n", "v" }, "<leader>a", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, {})
 		end,
 	},
 }

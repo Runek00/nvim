@@ -7,7 +7,7 @@ return {
 		"MunifTanjim/nui.nvim",
 	},
 	config = function()
-		vim.keymap.set("n", "<leader>tt", ":Neotree filesystem toggle right reveal<CR>")
+		vim.keymap.set("n", "<leader>t", ":Neotree filesystem toggle right reveal<CR>")
 		local ntree = require("neo-tree")
 		ntree.setup({
 			close_if_last_window = true,

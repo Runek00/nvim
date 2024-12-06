@@ -9,7 +9,16 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "tsserver", "html", "htmx", "pylsp", "gopls", "zls", "robotframework_ls" },
+				ensure_installed = {
+					"lua_ls",
+					"tsserver",
+					"html",
+					"htmx",
+					"pylsp",
+					"gopls",
+					"zls",
+					"robotframework_ls",
+				},
 			})
 		end,
 	},
@@ -49,7 +58,7 @@ return {
 				require("telescope.builtin").lsp_references()
 			end, { noremap = true, silent = true })
 			vim.keymap.set({ "n", "v" }, "<leader>a", vim.lsp.buf.code_action, {})
-			vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, {})
+			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
 		end,
 	},
 }

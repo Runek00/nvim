@@ -15,4 +15,11 @@ vim.opt.scrolloff = 12
 
 vim.opt.colorcolumn = "80"
 
-vim.api.nvim_set_option("clipboard","unnamedplus")
+vim.api.nvim_set_option("clipboard", "unnamedplus")
+
+vim.cmd([[
+	augroup YankHighlight
+		autocmd!
+		autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+	augroup end
+]])
